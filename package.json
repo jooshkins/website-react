@@ -1,0 +1,23 @@
+{
+  "name": "website-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@blueprintjs/core": "^2.3.1",
+    "normalize.css": "^8.0.0",
+    "popper": "^1.0.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-grid-gallery": "^0.4.11",
+    "react-scripts": "1.1.4",
+    "react-transition-group": "^2.3.1",
+    "sass": "^1.7.1"
+  },
+  "homepage": "./",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

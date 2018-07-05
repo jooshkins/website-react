@@ -1,0 +1,32 @@
+/*
+ * Copyright 2017 Palantir Technologies, Inc. All rights reserved.
+ */
+.navbar-padding {
+  padding-top: 50px; }
+
+.art {
+  background-color: #202b33; }
+
+.code {
+  padding-top: 64px; }
+  .code img {
+    width: 100%; }
+
+.about {
+  padding-top: 14px; }
+  .about .w3-card {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    max-width: 400px;
+    background-color: #394b59; }
+    .about .w3-card img {
+      width: 100%; }
+
+.footer {
+  background-color: #394b59; }
+
+.invert-color {
+  filter: invert(100%); }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,41 @@
+@import "../node_modules/@blueprintjs/core/lib/scss/variables";
+$nav-bar-height: 50px;
+
+.navbar-padding {
+    padding-top: $nav-bar-height;
+}
+
+.art {
+    background-color: $dark-gray2
+}
+
+.code {
+    padding-top: 64px;
+    img {
+        width: 100%
+    }
+}
+
+.about {
+    padding-top: 14px;
+    
+    .w3-card {
+        margin: auto;
+        text-align: center;
+        width: 50%;
+        max-width: 400px;
+        background-color: $dark-gray5;
+
+        img {
+            width: 100%
+        }
+    }
+}
+
+.footer {
+    background-color: $dark-gray5
+}
+
+.invert-color {
+    filter: invert(100%);
+}

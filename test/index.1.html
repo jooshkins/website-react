@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<title>Joshua Sheridan - Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="logic.js"></script>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+/* Full height image header */
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("/w3images/mac.jpg");
+    min-height: 100%;
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+.w3-card {
+  margin: auto;
+  text-align: center;
+}
+</style>
+<body class="w3-light-grey">
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide">Joshua Sheridan</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+    <a href="#home" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK <!--<i class="fa fa-caret-down"></i>--></a>     
+      <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-user"></i> ABOUT</a>
+      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+  <!-- Header -->
+  <header id="home">
+    <span class="w3-hide-large w3-xxlarge w3-hover-text-grey"><i class="fa fa-bars"></i></span>
+    <div class="w3-container w3-section w3-padding-32">
+      <h2><b>Work</b></h2>
+    </div>
+  </header>
+  
+    <!--Photo-Grid-Row-->
+    <div class="w3-container" style="overflow: auto; width: 100%">
+        <div id="gallery"></div>
+    </div>
+
+<!-- About Section -->
+<div class="w3-container w3-center" id="about">
+  <h3 class="w3-center">ABOUT ME</h3>
+  <p class="w3-center w3-large">Artist, Jeweler, IT Pro</p>
+    <div class="w3-card w3-white" style="width:50%; max-width:400px">
+          <img src="me.jpg" style="width:100%">
+            <div class="w3-container w3-center">
+              <h4>Joshua Sheridan</h4>
+              <div class="w3-opacity">Loves learning and doing</div>
+              <div class="w3-half">
+                 <p><a href="jsheridan_cv.pdf">Artist CV</a></p>
+              </div>
+              <div class="w3-half">
+                 <p><a href="resume.html">Resume</a></p>
+              </div>
+            </div>
+  </div>
+</div>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-third">
+      <i class="fa fa-paint-brush  w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Art</p>
+      <p>Painter, loves art that is funny and sad.</p>
+    </div>
+    <div class="w3-third">
+      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Design</p>
+      <p>Founded<br><a href="http://thoughtcrimedesigns.com">Thought Crime Designs</a> <br> 3D Printed Jewerly</p>
+    </div>
+    <div class="w3-third">
+      <i class="fa fa-laptop w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">IT</p>
+      <p>10+ yrs IT experence, likes automation, hates lag.<br>
+      <a href="https://github.com/jooshkins?tab=repositories">See what I am making on GitHub <br><img src="GitHub-Mark-32px.png"></a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-xxlarge w3-black w3-padding-large w3-display-topright" title="Close Modal Image">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div class="w3-container w3-white" id="contact">
+  <h4 class="w3-center">CONTACT</h4>
+  <div class="w3-row-padding">
+    <div class="w3-center">
+      <p><i class="fa fa-envelope fa-fw w3-xlarge w3-margin-right"></i>Email: <a href="mailto:josh@joshuasheridan.com" target="_top">josh@joshuasheridan.com</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-32">
+</footer>
+</body>
+</html>
