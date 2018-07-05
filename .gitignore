@@ -23,3 +23,5 @@ yarn-error.log*
 /test
 
 /public/art
+
+/src/.sass-cache
