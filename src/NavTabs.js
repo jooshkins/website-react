@@ -5,7 +5,6 @@ import '@blueprintjs/core/lib/css/blueprint.css';
 import ArtPanel from './ArtPanel'
 import AboutPanel from './AboutPanel'
 import CodePanel from './CodePanel'
-import Footer from './Footer'
 
 class NavTabs extends React.Component {
     constructor(props) {
@@ -13,7 +12,36 @@ class NavTabs extends React.Component {
         this.state = {
             navebarTabId: 'Art',
             panel: <ArtPanel />,
+            artTitle: 'Art',
+            codeTitle: 'Code',
+            aboutTitle: 'About'
         };
+        this.collapseNav = this.collapseNav.bind(this)
+    }
+
+    collapseNav() {
+        if (window.innerWidth < 430) {
+            this.setState({
+                artTitle: '',
+                codeTitle: '',
+                aboutTitle: ''
+            })
+        } else {
+            this.setState({
+                artTitle: 'Art',
+                codeTitle: 'Code',
+                aboutTitle: 'About'
+            })
+        }
+    }
+
+    componentDidMount() {
+        this.collapseNav();
+        window.addEventListener('resize', this.collapseNav);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.collapseNav);
     }
 
     handleNavbarTabChange = (navbarTabId) => {
@@ -46,9 +74,9 @@ class NavTabs extends React.Component {
                             selectedTabId={this.state.navbarTabId}
                             renderActiveTabPanelOnly={true}
                         >
-                            <Tab id="Art" title={<Button text="Art" minimal={true} icon="trash"/>} />
-                            <Tab id="Code" title={<Button text="Code" minimal={true} icon="code" />} />
-                            <Tab id="About" title={<Button text="About" minimal={true} icon="user" />} />
+                            <Tab id="Art" title={<Button text={this.state.artTitle} minimal={true} icon="trash"/>} />
+                            <Tab id="Code" title={<Button text={this.state.codeTitle} minimal={true} icon="code" />} />
+                            <Tab id="About" title={<Button text={this.state.aboutTitle} minimal={true} icon="user" />} />
                         </Tabs>
                     </Navbar.Group>
                 </Navbar>

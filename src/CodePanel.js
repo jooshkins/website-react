@@ -1,6 +1,5 @@
 import React from 'react'
-import {Card, Elevation } from "@blueprintjs/core";
-
+import { Card } from "@blueprintjs/core";
 
 class CodePanel extends React.Component {
     openSpray = () => {
@@ -15,22 +14,28 @@ class CodePanel extends React.Component {
 
     render() {
         return (
-            <div className="w3-container navbar-padding code" style={{paddingTop: "64px"}}>
-                <Card interactive={true} elevation={Elevation.THREE} className="w3-quarter w3-margin" onClick={this.openSpray.bind()}>
-                    <h5><a href="https://github.com/jooshkins/SprayBottle">SprayBottle</a></h5>
-                    <p>A simple tool for supercharging your scripts</p>
-                    <img src="icon-spraybottle.png" />
-                </Card>
-                <Card interactive={true} elevation={Elevation.THREE} className="w3-quarter w3-margin" onClick={this.openColor.bind()}>
-                    <h5><a href="https://github.com/jooshkins/ColorPencil">ColorPencil</a></h5>
-                    <p>A little utility to help manage folder permissions</p>
-                    <img src="icon-colorpencil.png" />
-                </Card>
-                <Card interactive={true} elevation={Elevation.THREE} className="w3-quarter w3-margin" onClick={this.openGame.bind()}>
-                    <h5><a href="https://github.com/jooshkins/Divided">Divided</a></h5>
-                    <p>A mobile game about a single-celled organism.</p>
-                    <img src="icon-game.png" />
-                </Card>
+            <div className="w3-row-padding navbar-padding code" style={{paddingBottom: '1em', paddingTop: '64px'}}>
+                <div className="w3-third">
+                    <Card interactive={true} onClick={this.openSpray.bind()}>
+                        <h5><a href="https://github.com/jooshkins/SprayBottle">SprayBottle</a></h5>
+                        <p>A simple tool for supercharging your scripts</p>
+                        <img src="icon-spraybottle.png"/>
+                    </Card>
+                </div>
+                <div className="w3-third">
+                    <Card interactive={true} className="" onClick={this.openColor.bind()}>
+                        <h5><a href="https://github.com/jooshkins/ColorPencil">ColorPencil</a></h5>
+                        <p>A little utility to help manage folder permissions</p>
+                        <img src="icon-colorpencil.png"/>
+                    </Card>
+                </div>
+                <div className="w3-third">
+                    <Card interactive={true} className="" onClick={this.openGame.bind()}>
+                        <h5><a href="https://github.com/jooshkins/Divided">Divided</a></h5>
+                        <p>A mobile game about a single-celled organism.</p>
+                        <img src="icon-game.png"/>
+                    </Card>
+                </div>
             </div>
         );
     }
