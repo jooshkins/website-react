@@ -1,6 +1,5 @@
 import React from 'react'
 import ImageGallery from './ImageGallery'
-import { Button, ButtonGroup, Intent } from '@blueprintjs/core'
 
 class ArtPanel extends React.Component {
     constructor(props){
