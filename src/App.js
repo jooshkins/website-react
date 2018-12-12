@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import NavTabs from './NavTabs'
+import { withRouter } from "react-router-dom";
+import Routes from './Routes'
 
 class App extends Component {
   render() {
     return (
-      <NavTabs />
+      <Routes />
     );
   }
 }
 
-export default App;
+export default withRouter(App);

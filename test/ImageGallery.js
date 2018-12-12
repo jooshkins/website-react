@@ -1,35 +1,16 @@
 import React from 'react'
 import Gallery from 'react-grid-gallery';
 
-const imgs = []
-
-const getImages = (amount, path) => {
-    imgs.length = 0;
-    var step;
-    var fulPath;
-    if (path == 'art') {fulPath = 'art' }
-    else {fulPath = `art/${path}`}
-
-    for (step = 0; step < amount; step++) {
-        console.log(`${fulPath}/1(${step}).jpg`)
-        imgs.push(
-            {
-                src: `${fulPath}/1(${step}).jpg`,
-                thumbnail: `${fulPath}/1(${step}).jpg`
-            },
-        )
-    }
-}
+const saved = '[{"src":"art/1(0).jpg","thumbnail":"art/1(0).jpg","thumbnailWidth":532,"thumbnailHeight":1024},{"src":"art/1(1).jpg","thumbnail":"art/1(1).jpg","thumbnailWidth":606,"thumbnailHeight":850},{"src":"art/1(10).jpg","thumbnail":"art/1(10).jpg","thumbnailWidth":867,"thumbnailHeight":850},{"src":"art/1(11).jpg","thumbnail":"art/1(11).jpg","thumbnailWidth":1024,"thumbnailHeight":714},{"src":"art/1(12).jpg","thumbnail":"art/1(12).jpg","thumbnailWidth":1000,"thumbnailHeight":500},{"src":"art/1(13).jpg","thumbnail":"art/1(13).jpg","thumbnailWidth":394,"thumbnailHeight":800},{"src":"art/1(14).jpg","thumbnail":"art/1(14).jpg","thumbnailWidth":1000,"thumbnailHeight":512},{"src":"art/1(15).jpg","thumbnail":"art/1(15).jpg","thumbnailWidth":572,"thumbnailHeight":850},{"src":"art/1(16).jpg","thumbnail":"art/1(16).jpg","thumbnailWidth":595,"thumbnailHeight":850},{"src":"art/1(17).jpg","thumbnail":"art/1(17).jpg","thumbnailWidth":1100,"thumbnailHeight":457},{"src":"art/1(18).jpg","thumbnail":"art/1(18).jpg","thumbnailWidth":1024,"thumbnailHeight":684},{"src":"art/1(19).jpg","thumbnail":"art/1(19).jpg","thumbnailWidth":1024,"thumbnailHeight":735},{"src":"art/1(2).jpg","thumbnail":"art/1(2).jpg","thumbnailWidth":677,"thumbnailHeight":1024},{"src":"art/1(20).jpg","thumbnail":"art/1(20).jpg","thumbnailWidth":735,"thumbnailHeight":1000},{"src":"art/1(21).jpg","thumbnail":"art/1(21).jpg","thumbnailWidth":1024,"thumbnailHeight":641},{"src":"art/1(22).jpg","thumbnail":"art/1(22).jpg","thumbnailWidth":202,"thumbnailHeight":950},{"src":"art/1(23).jpg","thumbnail":"art/1(23).jpg","thumbnailWidth":1000,"thumbnailHeight":426},{"src":"art/1(24).jpg","thumbnail":"art/1(24).jpg","thumbnailWidth":1000,"thumbnailHeight":695},{"src":"art/1(25).jpg","thumbnail":"art/1(25).jpg","thumbnailWidth":1000,"thumbnailHeight":741},{"src":"art/1(26).jpg","thumbnail":"art/1(26).jpg","thumbnailWidth":475,"thumbnailHeight":750},{"src":"art/1(27).jpg","thumbnail":"art/1(27).jpg","thumbnailWidth":576,"thumbnailHeight":800},{"src":"art/1(28).jpg","thumbnail":"art/1(28).jpg","thumbnailWidth":684,"thumbnailHeight":800},{"src":"art/1(29).jpg","thumbnail":"art/1(29).jpg","thumbnailWidth":1024,"thumbnailHeight":763},{"src":"art/1(3).jpg","thumbnail":"art/1(3).jpg","thumbnailWidth":1024,"thumbnailHeight":701},{"src":"art/1(30).jpg","thumbnail":"art/1(30).jpg","thumbnailWidth":619,"thumbnailHeight":850},{"src":"art/1(31).jpg","thumbnail":"art/1(31).jpg","thumbnailWidth":1100,"thumbnailHeight":502},{"src":"art/1(32).jpg","thumbnail":"art/1(32).jpg","thumbnailWidth":1024,"thumbnailHeight":679},{"src":"art/1(33).jpg","thumbnail":"art/1(33).jpg","thumbnailWidth":1024,"thumbnailHeight":729},{"src":"art/1(34).jpg","thumbnail":"art/1(34).jpg","thumbnailWidth":525,"thumbnailHeight":750},{"src":"art/1(35).jpg","thumbnail":"art/1(35).jpg","thumbnailWidth":564,"thumbnailHeight":750},{"src":"art/1(36).jpg","thumbnail":"art/1(36).jpg","thumbnailWidth":547,"thumbnailHeight":750},{"src":"art/1(37).jpg","thumbnail":"art/1(37).jpg","thumbnailWidth":1000,"thumbnailHeight":721},{"src":"art/1(38).jpg","thumbnail":"art/1(38).jpg","thumbnailWidth":589,"thumbnailHeight":800},{"src":"art/1(39).jpg","thumbnail":"art/1(39).jpg","thumbnailWidth":791,"thumbnailHeight":950},{"src":"art/1(4).jpg","thumbnail":"art/1(4).jpg","thumbnailWidth":700,"thumbnailHeight":950},{"src":"art/1(40).jpg","thumbnail":"art/1(40).jpg","thumbnailWidth":1024,"thumbnailHeight":705},{"src":"art/1(41).jpg","thumbnail":"art/1(41).jpg","thumbnailWidth":675,"thumbnailHeight":900},{"src":"art/1(42).jpg","thumbnail":"art/1(42).jpg","thumbnailWidth":739,"thumbnailHeight":1024},{"src":"art/1(43).jpg","thumbnail":"art/1(43).jpg","thumbnailWidth":609,"thumbnailHeight":850},{"src":"art/1(44).jpg","thumbnail":"art/1(44).jpg","thumbnailWidth":601,"thumbnailHeight":850},{"src":"art/1(45).jpg","thumbnail":"art/1(45).jpg","thumbnailWidth":1002,"thumbnailHeight":1024},{"src":"art/1(46).jpg","thumbnail":"art/1(46).jpg","thumbnailWidth":597,"thumbnailHeight":850},{"src":"art/1(47).jpg","thumbnail":"art/1(47).jpg","thumbnailWidth":599,"thumbnailHeight":850},{"src":"art/1(5).jpg","thumbnail":"art/1(5).jpg","thumbnailWidth":700,"thumbnailHeight":950},{"src":"art/1(6).jpg","thumbnail":"art/1(6).jpg","thumbnailWidth":543,"thumbnailHeight":750},{"src":"art/1(7).jpg","thumbnail":"art/1(7).jpg","thumbnailWidth":1200,"thumbnailHeight":542},{"src":"art/1(8).jpg","thumbnail":"art/1(8).jpg","thumbnailWidth":423,"thumbnailHeight":850},{"src":"art/1(9).jpg","thumbnail":"art/1(9).jpg","thumbnailWidth":1024,"thumbnailHeight":499}]'
+const imgs = JSON.parse(saved)
 
 class ImageGallery extends React.Component {
-
     render() {
-    getImages(this.props.amount, this.props.path)   
         return (
             <Gallery 
             images={imgs}
+            margin={5}
             enableImageSelection={false}
-            rowHeight={300}
              />
         );
     }

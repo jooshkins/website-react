@@ -1,5 +1,6 @@
 import React from 'react'
 import ImageGallery from './ImageGallery'
+import Nav from './Nav'
 
 class ArtPanel extends React.Component {
     constructor(props){
@@ -9,11 +10,14 @@ class ArtPanel extends React.Component {
 
     render() {
         return (
-            <div className="navbar-padding">
-                <ImageGallery
-                    amount={50}
-                    path={this.state.path}
-                />
+            <div>
+                <Nav tabId="Art" />
+                <div className="navbar-padding">
+                    <ImageGallery
+                        amount={50}
+                        path={this.state.path}
+                    />
+                </div>
             </div>
         );
     }

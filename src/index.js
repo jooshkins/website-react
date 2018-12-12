@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style.css';
-import registerServiceWorker from './registerServiceWorker';
+import { BrowserRouter as Router } from 'react-router-dom';
+import * as serviceWorker from './registerServiceWorker';
 import App from './App';
+import './style.css';
 import '@blueprintjs/core/lib/css/blueprint.css';
 
 ReactDOM.render(
-    <App />,
+    <Router>
+        <App />
+    </Router>,
     document.getElementById('root')
 );
-
-registerServiceWorker();
+serviceWorker.unregister();
